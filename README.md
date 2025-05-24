@@ -14,6 +14,7 @@ This script fetches OHLC (Open, High, Low, Close) data for a all cryptocurrency 
 - TrainingSignalGenerator to generate signals and notifications (via telegram)
 - Coin_fetcher which will fetch coins using leverage as a filter
 - HyperFetch, containing DataFetcher which will fetch and generate OHLC data (pass in )
+- sample .env file
 - And more!
 
 ---
