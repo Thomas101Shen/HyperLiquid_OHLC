@@ -86,6 +86,7 @@ Live trade and signal updates will be printed and optionally pushed via Telegram
 
 - Timestamp is in **UTC**, per HyperLiquid's format.
 - You may experience compatibility issues with `pandas-ta`. A future release may include manually implemented indicators.
+- The code is littered with commented code, these are past attempts to fix problems and you may take these as suggestions :)
 
 ---
 
