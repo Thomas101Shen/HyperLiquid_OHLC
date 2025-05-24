@@ -24,24 +24,44 @@ This script fetches OHLC (Open, High, Low, Close) data for a all cryptocurrency 
 - Dependencies are included in the requirements.txt file
 - HL api key and secret
 - Telegram bot token and chatids
+- Reccomended: a cloud server to run this program on so it can collect live data over time (alternative: keep this program running for hours on your personal laptop)
 
 ---
 
 ## Setup
 
 1. Clone this repository or copy the script to your local environment.
-2. Install the required Python packages:
-   `pip install -r requirements.txt`
-It is recomended to use a venv
+2. Install the required Python packages, it is recomended to use a venv
 ```
 Python -m venv ./venv
 source ./venv/bin/activate
 pip install -r requirements.txt
 ```
+
+3. Test TradingSignalGenerator
+```
+python TradingSignalGenerator.py
+python
+import os
+import pandas as pd
+dir = signal_data
+files = os.listdir(dir)
+for file in files:
+    path = os.path.join(dir, file)
+    pd.read_csv(path)
+```
+You will see generated RSI signals on top of the OHLC data
+
+4. Setup HL Api key and secret, and telegram bot and chatids via .env
+
+5. `python main.py` and let it run
+
+
 Warning: I used python 3.10, 3.8 or higher might work, after 3.10 won't work since pandas-ta is used (but that library causes more harm than good here,
 maybe manually calcululating indicators will make this program more robust)
 (Note: HL uses UTC for timestamps)
 Have fun!
+
 
 ## Biggest problems to be explored:
 Tradingsignalgenerator performs dataframe-wide operations every time, when it's only needed on the first operation or if the program is restarted. It also removes all previous data on run (process_csv_files will override all previous data.)
