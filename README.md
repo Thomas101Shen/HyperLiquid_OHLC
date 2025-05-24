@@ -20,10 +20,9 @@ This script fetches OHLC (Open, High, Low, Close) data for a all cryptocurrency 
 
 ## Requirements
 
-- Python 3.8 or higher
-(Note most of the dependencies are included in the requirements.txt file)
-HL api key and secret
-Telegram bot token and chatids
+- Dependencies are included in the requirements.txt file
+- HL api key and secret
+- Telegram bot token and chatids
 
 ---
 
@@ -38,7 +37,8 @@ Python -m venv ./venv
 source ./venv/bin/activate
 pip install -r requirements.txt
 ```
-Warning: There may be some requirements missing, this also requires python 3.10
+Warning: I used python 3.10, 3.8 or higher might work, after 3.10 won't work since pandas-ta is used (but that library causes more harm than good here,
+maybe manually calcululating indicators will make this program more robust)
 (Note: HL uses UTC for timestamps)
 Have fun!
 
@@ -46,3 +46,5 @@ Have fun!
 Tradingsignalgenerator performs dataframe-wide operations every time, when it's only needed on the first operation or if the program is restarted. It also removes all previous data on run (process_csv_files will override all previous data.)
 
 Position logger stopped working some updates ago, and there are problems with the program restarting and the positions being incorrect (although the program runs fine regardless, be warned the error logs might be full of position logging errors)
+
+If the telegram bot for position logger is different from the trade notification one, then you must adjust the .env file accordingly
