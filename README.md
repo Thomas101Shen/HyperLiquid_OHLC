@@ -51,13 +51,24 @@ python TradingSignalGenerator.py
 
 Inspect the `signal_data/` folder. Each file shows RSI signals applied to OHLC data.
 
-2. **Start Live Data Fetching and Alerts**:
+2. **Create config.json file**
+
+Refer to HL's official sdk documentation [here][https://github.com/hyperliquid-dex/hyperliquid-python-sdk]
+
+3. **Create HL account**
+
+4. **Crate Telegram Bot and start a chat with it**
+[Reference][https://core.telegram.org/bots/api]
+
+5. **Populate .env and config.json with HL addresses and Telegram bot info**
+
+6. **Start Live Data Fetching and Alerts**:
 
 ```bash
 python main.py
 ```
 
-Live trade and signal updates will be printed and optionally pushed via Telegram.
+Live trade and signal updates will be printed and pushed via Telegram.
 
 ---
 
@@ -66,9 +77,9 @@ Live trade and signal updates will be printed and optionally pushed via Telegram
 - `main.py` — Entry point for live trading system
 - `HyperFetch.py` — OHLC data generator and fetcher
 - `TradingSignalGenerator.py` — Computes signals and generates alerts
-- `Coin_fetcher.py` — Filters coins by leverage or other criteria
+- `Coin_fetcher.py` — Filters coins by leverage
 - `error_log.txt` — Captures runtime errors from main process
-- `sample_data/` — Example CSV files for validation
+- `test_data/` — Example CSV files for validation
 
 ---
 
@@ -86,7 +97,7 @@ Live trade and signal updates will be printed and optionally pushed via Telegram
 
 - Timestamp is in **UTC**, per HyperLiquid's format.
 - You may experience compatibility issues with `pandas-ta`. A future release may include manually implemented indicators.
-- The code is littered with commented code, these are past attempts to fix problems and you may take these as suggestions :)
+- The code is littered with commented code. These are past attempts to fix problems and you may take these as suggestions :)
 
 ---
 
